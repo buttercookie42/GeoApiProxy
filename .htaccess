@@ -1,0 +1,9 @@
+RewriteEngine on
+
+# Proxy the relevant GeoNames APIs
+RewriteRule "^timezone$" "proxy.php"
+RewriteRule "^srtm3$" "proxy.php"
+RewriteRule "^gtopo30$" "proxy.php"
+RewriteRule "^findNearbyPlaceName$" "proxy.php"
+RewriteRule "^findNearbyPostalCodes$" "proxy.php"
+RewriteRule "^debug$" "proxy.php"
