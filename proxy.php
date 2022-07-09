@@ -44,8 +44,9 @@ const LANGUAGE_MAPPING = ['us' => 'en',
                           'hu' => 'hu',
                           'default' => 'de,en',
                          ];
-// Ignore states and use counties instead.
+// Ignore states and use counties/other lower subdivisions instead.
 const IGNORE_STATE =              ['gb',
+                                   'fr',
                                   ];
 // Prefer the municipality name as the city name.
 const MUNICPALITY_OVERRIDE =      ['Stutensee',
