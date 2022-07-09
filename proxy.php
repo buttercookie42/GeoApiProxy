@@ -59,6 +59,9 @@ const SUBURB_CITY_NAME_OVERRIDE = ['New York',
 // Prefer neighbourhood name over suburbs for the sublocation.
 const NEIGHBOURHOOD_OVERRIDE =    ['New York',
                                   ];
+// Neighbourhood names to ignore.
+const IGNORE_NEIGHBOURHOOD =      ['Hanggebiet',
+                                  ];
 
 
 $stateService = new StateService(sys_get_temp_dir());
@@ -228,7 +231,8 @@ function getPlace($rawData): string
   } else if (isset($rawData->suburb))
   {
     $place = $rawData->suburb;
-  } else if (isset($rawData->neighbourhood))
+  } else if (isset($rawData->neighbourhood) &&
+             !in_array($rawData->neighbourhood, IGNORE_NEIGHBOURHOOD))
   {
     $place = $rawData->neighbourhood;
   } else if (isset($rawData->hamlet))
